@@ -13,7 +13,7 @@ import (
 
 func main() {
 	var socketPath string
-	flag.StringVar(&socketPath, "socket", "/run/guest-services/jupyter-docker-extension.sock", "Unix domain socket to listen on")
+	flag.StringVar(&socketPath, "socket", "/run/guest-services/jgt-jupyter-docker-extension.sock", "Unix domain socket to listen on")
 	flag.Parse()
 
 	os.RemoveAll(socketPath)

@@ -1,4 +1,4 @@
-module jupyter-docker-extension
+module jgt-jupyter-docker-extension
 
 go 1.17
 

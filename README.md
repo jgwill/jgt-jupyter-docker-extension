@@ -53,7 +53,7 @@ The extension is using the official Jupyter Docker Image, an extra step is neces
 Adding this kernel is easy, just right after the extension is installed by excuting in a terminal:
 
 ```bash
-docker exec -ti --user root jupyter_embedded_dd_vm /bin/sh -c "curl -s https://raw.githubusercontent.com/marcelo-ochoa/jupyter-docker-extension/main/addJava.sh | bash"
+docker exec -ti --user root jupyter_embedded_dd_vm /bin/sh -c "curl -s https://raw.githubusercontent.com/jgwill/jgt-jupyter-docker-extension/main/addJava.sh | bash"
 ```
 
 ### Add R Kernel support
@@ -62,7 +62,7 @@ The extension is using the official Jupyter Docker Image, an extra step is neces
 Adding this kernel is easy, just right after the extension is installed by excuting in a terminal:
 
 ```bash
-docker exec -ti --user root jupyter_embedded_dd_vm /bin/sh -c "curl -s https://raw.githubusercontent.com/marcelo-ochoa/jupyter-docker-extension/main/addR.sh | bash"
+docker exec -ti --user root jupyter_embedded_dd_vm /bin/sh -c "curl -s https://raw.githubusercontent.com/jgwill/jgt-jupyter-docker-extension/main/addR.sh | bash"
 ```
 
 ## Know kveats
@@ -80,4 +80,4 @@ Extension "Jupyter Notebook" uninstalled successfully
 
 ## Sources
 
-As usual the code of this extension is at [GitHub](https://github.com/marcelo-ochoa/jupyter-docker-extension), feel free to suggest changes and make contributions, note that I am a beginner developer of React and TypeScript so contributions to make this UI better are welcome.
+As usual the code of this extension is at [GitHub](https://github.com/jgwill/jgt-jupyter-docker-extension), feel free to suggest changes and make contributions, note that I am a beginner developer of React and TypeScript so contributions to make this UI better are welcome.

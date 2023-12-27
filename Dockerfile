@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM node:17.7-alpine3.14 AS client-builder
+FROM --platform=$BUILDPLATFORM node:current-alpine3.19 AS client-builder
 WORKDIR /app/client
 # cache packages in layer
 COPY client/package.json /app/client/package.json
@@ -10,7 +10,7 @@ RUN --mount=type=cache,target=/usr/src/app/.npm \
 COPY client /app/client
 RUN npm run build
 
-FROM golang:1.17-alpine AS builder
+FROM golang:alpine3.19 AS builder
 ENV CGO_ENABLED=0
 WORKDIR /backend
 COPY vm/go.* .
@@ -22,7 +22,7 @@ RUN --mount=type=cache,target=/go/pkg/mod \
     --mount=type=cache,target=/root/.cache/go-build \
     go build -trimpath -ldflags="-s -w" -o bin/service
 
-FROM alpine:3.15
+FROM alpine:3.19.0
 
 LABEL org.opencontainers.image.title="JGT Jupyter Notebook Scientific Python Stack"
 LABEL org.opencontainers.image.description="JGT Docker Extension for using an embedded Jupyter Notebook Scientific Python Stack."

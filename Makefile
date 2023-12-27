@@ -7,6 +7,11 @@ MINOR=1
 IMAGE_NAME=$(ORG)/jgt-jupyter-docker-extension
 TAGGED_IMAGE_NAME=$(IMAGE_NAME):$(VERSION).${MINOR}
 
+
+echo:
+	@echo $(IMAGE_NAME)
+	@echo $(TAGGED_IMAGE_NAME)
+
 clean:
 	-docker extension rm $(IMAGE_NAME)
 	-docker rmi $(TAGGED_IMAGE_NAME)
@@ -15,7 +20,7 @@ extension:
 	docker buildx build -t $(TAGGED_IMAGE_NAME) --build-arg VERSION=$(VERSION) --build-arg JUPYTER_IMAGE_NAME=$(JUPYTER_IMAGE_NAME) .
 
 install:
-	docker extension install -f $(TAGGED_IMAGE_NAME)
+	docker extension install $(TAGGED_IMAGE_NAME)
 
 validate: extension
 	docker extension  validate $(TAGGED_IMAGE_NAME)
